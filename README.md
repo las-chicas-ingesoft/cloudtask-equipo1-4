@@ -149,86 +149,79 @@ cloudtasks/
 │
 └── .gitignore
 
-
-
+ 
 ---
-
+ 
 ## Configuración de Supabase
-
+ 
 ### 1. Crear el proyecto
-
+ 
 Crear un proyecto en [Supabase](https://supabase.com/).
-
+ 
 ### 2. Configurar la base de datos
-
+ 
 Ejecutar el script SQL del esquema, incluyendo:
-
+ 
 * Tabla `tasks`.
 * Índices.
 * Políticas de seguridad RLS.
-
 El script debe ejecutarse desde:
-
+ 
 **Project → SQL Editor**
-
+ 
 ### 3. Configurar la autenticación
-
+ 
 Ingresar a:
-
+ 
 **Authentication → Providers → Email**
-
+ 
 Si se desea que el usuario quede con la sesión activa inmediatamente después de registrarse, se puede desactivar **Confirm email**. Esta configuración es recomendada para el laboratorio.
-
+ 
 ### 4. Configurar las credenciales
-
+ 
 Copiar la:
-
+ 
 * `Project URL`
 * Clave pública `anon` / `publishable key`
-
 desde:
-
+ 
 **Project Settings → API**
-
+ 
 y colocarlas en:
-
+ 
 ```text
 js/config.js
 ```
-
->  **Importante:** en `js/config.js` solo debe utilizarse la clave pública `anon` / `publishable`, diseñada para exponerse en el navegador.
+ 
+> ⚠️ **Importante:** en `js/config.js` solo debe utilizarse la clave pública `anon` / `publishable`, diseñada para exponerse en el navegador.
 >
 > **Nunca se debe utilizar la `service_role key` en el frontend.**
-
+ 
 ---
-
+ 
 ## Despliegue en Vercel
-
+ 
 1. Vincular el repositorio `las-chicas-ingesoft/cloudtask-equipo1-4` de GitHub con una cuenta de Vercel.
 2. Configurar el proyecto como sitio estático (sin framework).
 3. Cada `push` a la rama `main` genera automáticamente un nuevo despliegue en producción.
-
 ---
-
+ 
 ## Pruebas
-
+ 
 El equipo documentó pruebas funcionales y de integración (Supabase, Vercel, Cloudflare) y pruebas de validación/manejo de errores, con capturas de evidencia. Entre los casos cubiertos:
-
+ 
 * Creación, actualización y eliminación de tareas, verificadas directamente en la base de datos.
 * Persistencia de datos entre sesiones.
 * Aislamiento de datos entre usuarios (RLS).
 * Validación de formularios (título vacío, fecha límite en el pasado).
 * Manejo de credenciales incorrectas y registro con correo duplicado.
 * Comportamiento ante pérdida de conexión a internet (recuperación con `try/catch`).
-
 Ver el documento de pruebas del equipo para el detalle completo, capturas y resultados.
-
+ 
 ---
-
+ 
 ## Próximos pasos
-
+ 
 * Completar la configuración de Cloudflare en cuanto el dominio termine de propagarse: registro DNS hacia Vercel, activación de HTTPS/TLS, y validación del flujo completo `usuario → Cloudflare → Vercel → CloudTasks`.
 * Reemplazar la URL provisional de Vercel por el dominio propio una vez esté activo.
-
-
   
