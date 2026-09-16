@@ -32,7 +32,7 @@ Estas son las pruebas de la hoja "Pruebas integración" de la rúbrica. Llenar l
 | CF-01 | Acceso por dominio | Abrir el dominio/subdominio en el navegador. | La aplicación carga correctamente. | | Sí / No / **Bloqueado** | Captura #1 capturas/dominio.jpeg |
 | CF-02 | DNS | Revisar el panel de DNS en Cloudflare e identificar el registro creado. | El dominio resuelve al destino configurado (Vercel). | | | Captura #2 capturas/cloudflaredom.jpg |
 | CF-03 | HTTPS/TLS | Abrir la URL con `https://` y revisar el candado del navegador.jpg | HTTPS funcional, certificado válido. | | | Captura #3 capturas/pagweb. |
-| CF-04 | Cloudflare → Vercel | Revisar el dominio registrado en ambos paneles. | La petición llega al deployment correcto. | | | Captura #4 capturas/vercel.jpg |
+| CF-04 | Cloudflare → Vercel | Revisar el dominio registrado en ambos paneles. | La petición llega al deployment correcto. | | | ![Captura #4](capturas/vercel.jpg) |
 
 > **Nota del equipo:** el dominio fue solicitado el 10/09/2026 y a la fecha de entrega no ha sido asignado, por lo que las pruebas CF-01 a CF-04 no pudieron ejecutarse por una dependencia externa al equipo. Se adjunta la evidencia de la solicitud. La configuración quedó preparada para aplicarse apenas se reciba el dominio.
 
@@ -41,7 +41,7 @@ Estas son las pruebas de la hoja "Pruebas integración" de la rúbrica. Llenar l
 | ID | Prueba | Procedimiento | Resultado esperado | Resultado obtenido | Cumple | Evidencia |
 |---|---|---|---|---|---|---|
 | VE-01 | Deployment | Revisar el proyecto y el último deployment en Vercel. | Deployment en estado "Ready" / exitoso. | | | Captura #1 capturas/vercel.jpg |
-| VE-02 | GitHub → Vercel | Hacer un cambio pequeño, `git push` a `main` y revisar Vercel. | Se genera automáticamente un nuevo deployment. | | | Captura #2 |
+| VE-02 | GitHub → Vercel | Hacer un cambio pequeño, `git push` a `main` y revisar Vercel. | Se genera automáticamente un nuevo deployment. | | | Captura #2 capturas/deployv.jpg |
 
 > Para VE-02 conviene registrar el hash del commit y la hora del deployment, así se ve que uno disparó al otro.
 
